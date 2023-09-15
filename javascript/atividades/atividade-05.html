@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade - 05</title>
+    <title>Atividade - 06</title>
     <script>
-        let A = 10
-        let B = 20
-        let C 
-        
+        let nome = prompt('Digite seu nome: ', '');
+        let email = prompt('Digite seu E-mail: ', '');
+        let tel = prompt('Digite seu telefone: ', '');
 
-        C = A
-        A = B
-        B = C
-
-        console.log(A + ' ' + B)
+        document.write('<table border=solid width=200px><tr bgcolor=black><th colspan=2>' + '<font color=white>Cadastro</font></th></tr>');
+        document.write('<tr><td bgcolor=#ccc>Nome: </td><td>' +  nome + '</td></tr>');
+        document.write('<tr><td bgcolor=#ccc>E-mail: </td><td>' + email + '</td></tr>');
+        document.write('<tr><td bgcolor=#ccc>Telefone: </td><td>' + tel + '</td></tr></table>');
 
     </script>
 </head>
 <body>
-    <h1>Atividade - 05</h1>
-    <h2>Aperte CTRL + SHIFT + I</h2>
+    
 </body>
 </html>
