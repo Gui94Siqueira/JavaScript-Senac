@@ -9,11 +9,20 @@
         let minha_cor = 'yellow';
 
         if(minha_cor == cor_usuario) {
-            document.write('<body bgcolor=yellow><h1>muito bem ' + cor_usuario + ' é uma cor muito linda</h1> </body>');
+            document.write('<h1>muito bem ' + cor_usuario + ' é uma cor muito linda</h1>');
+            document.bgColor = minha_cor;
         } else {
             document.write('<h1>lamento a  ' + cor_usuario + ' não é uma cor muito legal</h1>');
         };
+
+
     </script>
+    <style>
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
     
