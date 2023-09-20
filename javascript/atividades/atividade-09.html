@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 09</title>
+    <script>
+        let idade = prompt('Digite a sua idade: ','');
+        let auth = prompt('Autorização dos pais (SIM OU NÃO?): ','');
+
+        if (idade >= 18 && auth == 'sim') {
+            document.write('Idade: <b>' + idade + '</b>');
+            document.write('<br><font color=blue>PODE entrar.');
+        } else {
+            document.write('Idade: ' + idade);
+            document.write('<br><font color=red>NÃO pode entrar.');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
