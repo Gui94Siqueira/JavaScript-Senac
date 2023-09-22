@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 17</title>
+    <script>
+        let custo = prompt('Digite o valor de custo do produto: ','');
+        let acrecimo = prompt('digite o percentual de acrecimo ao pruduto (SEM O %): ','');
+
+        let valorPercentual = custo * (acrecimo / 100);
+
+        custo = parseFloat(custo);
+        acrecimo = parseFloat(acrecimo)
+        acrecimoReais = parseFloat(custo + valorPercentual);
+
+        document.write('Valor de custo: <b>' + custo + '.00</b>');
+        document.write('<br>valor percentual de venda: <b>' + acrecimo + '% </b>');
+        document.write('<br>valor de venda: <b>' + acrecimoReais + '.00</b>'); 
+        document.write('<br>Lucro: <font color=red><b>' + valorPercentual + '.00</font></b>')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

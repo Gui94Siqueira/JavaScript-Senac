@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade -11</title>
+    <script>
+        // crie um programa que peça o nome de uma fruta e imprima em uma imagen da fruta digitada na tela
+
+
+        let fruta = prompt('Escolha uma fruta (MAÇÃ OU BANANA)','');
+        let formantacao = fruta.toUpperCase();
+
+        let frutaUsuario = (formantacao == 'MAÇÃ') ? '<img src=img/maca.jpg width=500>' : '<img src=img/banana.jpg width=500>';
+
+        document.write(frutaUsuario);
+    </script> 
+</head>
+<body>
+
+</body>     
+</html>

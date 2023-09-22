@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 18</title>
+    <script>
+        let codigo = prompt('Digite o numero do seu codigo de atendimento: ','');
+        let estatus;
+        
+        
+        
+        codigo = parseInt(codigo);
+
+        switch (codigo) {
+            case 1:
+                estatus = 'aberto';
+                break;
+            case 2:
+                estatus = 'Em andamento';
+                break;
+            case 3:
+                estatus = 'Resolvido';
+                break;
+            case 4:
+                estatus = 'Fechado';
+                break;
+            default:
+                estatus = 'Codigo inexistente'
+        }
+
+        alert(estatus);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

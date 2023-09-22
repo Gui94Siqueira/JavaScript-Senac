@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 16</title>
+    <script>
+        let aluno = prompt('Digite o nome do aluno: ','');
+
+        let n01 = prompt('digite a primeira nota do aluno: ','');
+        let n02 = prompt('digite a segunda nota do aluno: ','');
+        let n03 = prompt('digite a terceira nota do aluno: ','');
+        let n04 = prompt('digite a quarta nota do aluno: ','');
+
+        n01 = parseFloat(n01);
+        n02 = parseFloat(n02);
+        n03 = parseFloat(n03);
+        n04 = parseFloat(n04);
+
+        let media;
+        let situacao;
+
+        media = ((n01+n02+n03+n04) / 4);
+
+        if (media >= 7) {
+            situacao = '<font color=blue><b>APROVADO</b></font>'
+        } else {
+            situacao = '<font color=red><b>REPROVADO</b></font>'
+        }
+
+
+        document.write('<br> Aluno: ' + aluno);
+        document.write('<br>1ª Nota: ' + n01);
+        document.write('<br>2ª Nota: ' + n02);
+        document.write('<br>3ª Nota: ' + n03);
+        document.write('<br>4ª Nota: ' + n04);
+        document.write('<br> Média: ' + media)
+        document.write('<br>Situação: ' + situacao)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

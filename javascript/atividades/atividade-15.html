@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 15</title>
+    <script>
+        let lado01 = prompt('Digite o valor do primeiro lado do triangulo: ','');
+        let lado02 = prompt('Digite o valor do segundo lado do triangulo: ','');
+        let lado03 = prompt('Digite o valor do terceiro lado do triangulo: ','');
+
+        let triangulo;
+        let tipoDeTriangulo;
+
+        if ( lado01 == lado02 && lado01 == lado03 && lado02 == lado03) {
+            triangulo = 'Equilatero'
+        } else if ( lado01 == lado02 || lado02 == lado03 || lado01 == lado03) {
+            triangulo = 'Isoseles'
+        } else {
+            triangulo = 'Escaleno'
+        }
+        
+        
+        
+
+        document.write('Lado 01: ' + lado01);
+        document.write('<br>lado 02: ' + lado02);
+        document.write('<br>lado 03: ' + lado03);
+
+        document.write('<br> Os lados do triângulo têm valores iguais, é um triangulo<font color=blue> ' + triangulo + '</font>')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
