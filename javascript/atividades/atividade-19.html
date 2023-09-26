@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 19</title>
+    <script>
+        alert('seja bem vindo! \n voce deve responder o questionário com os NUMEROS correspondentes a aternativa DESEJADA');
+
+        let pergunta01 = prompt('Pergunta 01 \n' + 'Qual a forma correta de declarar uma variavel em JavaScript ?\n' + '1) define\n 2)let\n 3) const\n 4) var','');
+
+        let resCorreta01 = 2;
+
+        let resposta01 = (pergunta01 == resCorreta01) ? resCorreta01 : pergunta01;
+
+        resposta01 = parseInt(resposta01);
+
+        let pontos = 0;
+
+        pontos = (resposta01 == resCorreta01) ? pontos+1 : pontos+0;
+
+        // perguta 02
+
+        let pergunta02 = prompt('Pergunta 02 \n' + 'Qual sinal é usado para concatenar em javaScript ?\n' + '1) +\n 2)-\n 3) *\n 4) %','');
+
+        let resCorreta02 = 2;
+
+        let resposta02 = (pergunta02 == resCorreta02) ? resCorreta02 : pergunta02;
+        resposta02 = parseInt(resposta02);
+
+        pontos = (resposta02 == resCorreta02) ? pontos+1 : pontos+0;
+
+        // pergunta 03
+
+        let pergunta03 = prompt('Pergunta 03 \n' + 'JavaScript é uma linguagem ?\n' + '1) case-sensitive\n 2)não case-sensitive\n 3) legada\n 4) adiantada','');
+
+        let resCorreta03 = 2;
+
+        let resposta03 = (pergunta03 == resCorreta03) ? resCorreta03 : pergunta03;
+
+        resposta03 = parseInt(resposta03); 
+
+        pontos = (resCorreta03 == resCorreta03) ? pontos+1 : pontos+0;
+        
+        // pergunta 04
+
+        let pergunta04 = prompt('Pergunta 04 \n' + 'Onde fica armazenada as variaveis ?\n' + '1) memória ROM\n 2)HD\n 3) SSD\n 4) memória RAM','');
+        let resCorreta04 = 2;
+
+        let resposta04 = (pergunta04 == 2) ? resCorreta04 : pergunta04;
+
+        resposta04 = parseInt(resposta04);
+
+        pontos = (resposta04 == resCorreta04) ? pontos+1 : pontos+0;
+        
+        // pergunta 05
+
+        let pergunta05 = prompt('Pergunta 05 \n' + 'Quais tipos de variaveis ?\n' + '1) string, int, float e bollean\n 2) int, char, card e all\n 3) post, get, request e pull\n 4) switch, if, else e parseInt','');
+
+        let resCorreta05 = 2;
+
+        let resposta05 = (pergunta05 == resCorreta05) ? resCorreta05 : pergunta05;
+
+        resposta05 = parseInt(resposta05);
+
+        pontos = (resposta05 == resCorreta05) ? pontos+1 : pontos+0;
+        
+        // pergunta 06
+
+        let pergunta06 = prompt('Pergunta 06 \n' + 'qual sinal de atribuição em javaScript ?\n' + '1) ==\n 2)=\n 3) ===\n 4) !=','');
+
+        let resCorreta06 = 2;
+
+        let resposta06 = (pergunta06 == resCorreta06) ?resCorreta06 : pergunta06;
+
+        resposta06 = parseInt(resposta06);
+
+        pontos = (resposta06 == resCorreta06) ? pontos+1 : pontos+0;
+        //pergunta 07
+
+        let pergunta07 = prompt('Pergunta 07 \n' + 'Como declarar variavel com o valor nulo ?\n' + '1) não escreve nada na frente da variavel\n 2)let\n 3) const\n 4) null','');
+        let resCorreta07 = 2;
+
+        let resposta07 = (pergunta07 == resCorreta07) ? resCorreta07 : pergunta07;
+
+        pontos = (resposta07 == resCorreta07) ? pontos+1 : pontos+0;
+        // pergunta 08
+
+        let pergunta08 = prompt('Pergunta 08 \n' + 'Como declarear uma variavel do tipo String ?\n' + '1) undefined\n 2)parseInt\n 3) ParseFloat\n 4) "conteudo"','');
+
+        let resCorreta08 = 2;
+
+        let resposta08 = (pergunta08 == resCorreta08) ? resCorreta08 : pergunta08;
+
+        resposta08 = parseInt(resposta08);
+        pontos = (resposta08 == resCorreta08) ? pontos+1 : pontos+0;
+        // pergunta 09
+
+        let pergunta09 = prompt('Pergunta 09\n' + 'Qual aternativa corresponde a forma de transformar o valor de uma variavel em string ?\n' + '1) toString()\n 2) parseFloat\n 3) ++\n 4) --','');
+
+        let resCorreta09 = 2;
+
+        let resposta09= (pergunta09 == resCorreta09) ? resCorreta09 : pergunta09;
+
+        resposta09 = parseInt(resposta09);
+
+        pontos = (resposta09 == resCorreta09) ? pontos+1 : pontos+0;
+        // pergunta 10
+
+        let pergunta10 = prompt('Pergunta10\n' + 'JavaScript é uma linguagem ?\n' + '1) graduada\n 2) mascarada\n 3) interpretada\n 4) odiada','');
+        let resCorreta10 = 2;
+        let resposta10 = (pergunta10 == resCorreta10) ? resCorreta10 : pergunta10;
+
+        resposta10 = parseInt(resposta10);
+
+        pontos = (resposta10 == resCorreta10) ? pontos+1 : pontos+0;
+
+        // documento a ser inserido na tela, pergunta 01 
+        document.write('<font color=blue><h1>Resultado</h1></font><br><br><br><br>');
+        document.write('Pergunta 01:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta01 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta01 + '</font><hr>');
+
+        // documento a ser inserido na tela, pergunta 02 
+        document.write('Pergunta 02:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta02 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta02 + '</font><hr>');
+
+        // documento a ser inserido na tela, pergunta 03
+        document.write('Pergunta 03:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta03 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta03 + '</font><hr>');
+
+        // documento a ser inserido na tela, pergunta 04 
+        document.write('Pergunta 04:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta04 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta04 + '</font><hr>');
+
+
+        // documento a ser inserido na tela, pergunta 05
+        document.write('Pergunta 05:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta05 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta05 + '</font><hr>');
+
+        // documento a ser inserido na tela, pergunta 06
+        document.write('Pergunta 06:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta06 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta06 + '</font><hr>');
+
+        // documento a ser inserido na tela, pergunta 07
+        document.write('Pergunta 01:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta07 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta07 + '</font><hr>');
+
+        // documento a ser inserido na tela, pergunta 08 
+        document.write('Pergunta 08:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta08 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta08 + '</font><hr>');
+
+        // documento a ser inserido na tela, pergunta 09 
+        document.write('Pergunta 09:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta09 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta09 + '</font><hr>');
+
+        // documento a ser inserido na tela, pergunta 10
+        document.write('Pergunta 10:')
+        document.write('<br>qual é a forma correta de declarar variavel em JavaScript?');
+        document.write('<br>Alternativa correta:<font color=blue>' + resCorreta10 + '</font>');
+        document.write('<br>Sua resposta:<font color=blue>' + resposta10 + '</font><hr>');
+
+        // resultado
+
+        document.write('pontos:<font color=red> ' + pontos + '</font>')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

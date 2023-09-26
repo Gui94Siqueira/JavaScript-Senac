@@ -1,5 +1,5 @@
 body {
-    background-color: #ebe7e0;
+    background-image: linear-gradient(to right bottom, rgb(170, 170, 224), blue);
     font: 13pt Arial;
 }
 

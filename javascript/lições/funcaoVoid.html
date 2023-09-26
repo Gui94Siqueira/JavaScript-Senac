@@ -1,0 +1,26 @@
+<script>
+    // Exemplo de função void
+    function imprimirSaudacao() {
+        console.log('Olá, Mundo!');
+        document.write('Olá, Mundo!<br>')
+    }
+
+    imprimirSaudacao();
+    imprimirSaudacao();
+    imprimirSaudacao();
+
+    function somarValores(a, b) {
+        return a + b;
+    }
+
+    // Aqui permitirems qe os valores dos parâmetros sejam definidos pelo usúario
+    a = parseInt(prompt('Valor 1: ',''));
+    b = parseInt(prompt('Valor 2: ',''));
+    
+    // a variavel resultado esta recebendo a função somarValores
+    let resultado = somarValores(a, b);
+
+    // Isso exibira '8' no console, porque a função retornou o resultado da soma. 
+    console.log(resultado);
+    document.write(resultado);
+</script>
