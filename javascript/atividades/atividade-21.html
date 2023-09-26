@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 21</title>
+    <script>
+        function media () {
+            let n1 = parseFloat(prompt('Digite a primeira nota do aluno: ',''));
+            let n2 = parseFloat(prompt('Digite a segunda nota do aluno: ',''));
+            let n3 = parseFloat(prompt('Digite a terceira nota do aluno: ',''));
+            let n4 = parseFloat(prompt('Digite a Quarta nota do aluno: ',''));
+            
+            let calcMedia = (n1 + n2 + n3 + n4) /4;
+
+            document.write('<table border=2 width=200><tr><td>Nota 01: </td><td>' + n1 + '</td></tr>');
+            document.write('<tr><td>Nota 02: </td><td>' + n2 + '</td></tr>');
+            document.write('<tr><td>Nota 03: </td><td>' + n3 + '</td></tr>');
+            document.write('<tr><td>Nota 04: </td><td>' + n4 + '</td.</tr>');
+
+            document.write('<tr><td>Média: </td><td>' + calcMedia + '</td></tr></table>');
+
+        }
+
+        media();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
