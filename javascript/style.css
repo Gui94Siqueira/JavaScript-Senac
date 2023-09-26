@@ -1,21 +1,15 @@
 body {
-    background-image: linear-gradient(to right bottom, rgb(170, 170, 224), blue);
+    background-image: linear-gradient(to right bottom, #e7e7dd, rgba(228, 209, 148, 0.37));
     font: 13pt Arial;
 }
 
 main {
-    background-image: linear-gradient(to right bottom, rgb(170, 170, 224), blue);
+    background-color: white;
     width: 800px;
     padding: 20px;
     margin: auto;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.842);
-}
-ul {
-    background-color: rgba(0, 0, 0, 0.753);
-    color: white;
-    border-radius: 10px;
-    padding: 40px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.529);
 }
 
 h1 {
@@ -25,29 +19,28 @@ h1 {
     flex-direction: column;
     color: rgb(0, 0, 0);
 }
+ ul{
+    padding: 20px 30px;
+    border-radius: 20px;
+ }
 
-.titulo-2 {
+.titulo-2{
     color: rgb(255, 253, 248);
 }
 
-
 h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: rgb(223, 171, 40);
+    color: #102f59;
 }
 
 aside {
     display: block; 
     font-size: 10pt;
-    background-color: rgba(184, 135, 11, 0.486);
+    text-align: justify;
+    background-color: #008992;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
-
 
 aside img {
     width: 60px; 
@@ -57,11 +50,11 @@ aside img {
 }
 
 a, a:visited {
-    color: darkgoldenrod;
+    color: #102f59;
     font-weight: bolder;
 }
 
 a:hover {
-    color: yellow;
+    color: #00587c;
     text-decoration: none;
 }
