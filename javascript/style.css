@@ -20,15 +20,22 @@ h1 {
     color: rgb(0, 0, 0);
 }
  ul{
+    background-color: rgba(112, 128, 144, 0.096);
     padding: 20px 30px;
     border-radius: 20px;
+    
  }
 
 .titulo-2{
+    text-align: center;
     color: rgb(255, 253, 248);
 }
 
 h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color: #102f59;
 }
 

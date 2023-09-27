@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Funçoes de callback e JavaScript</h1>
+
+    <button id="fundoRed" onclick="mudarFundo()">Mudar o fundo para vermelho</button>
+    <button id="fundoWhite" onclick="fundoBranco()">mudar o fundo para branco</button>
+    <br>
+    <button id="msgAlert" onclick="msgAlert()">messagem no alert</button>
+    <button id="msgPage" onclick="msgPage()">mensagem na pagina</button>
+
+    <script>
+        function mudarFundo() {
+            document.bgColor=('red');
+        }
+
+        function fundoBranco() {
+            document.bgColor=('#fff');
+        }
+
+        function msgAlert() {
+            alert('Guilherme\n Desenvolvedor: Junior');
+        }
+
+        function msgPage() {
+            document.write('<h1>Adoro JavaScript:)</h1>');
+        }
+    </script>
+</body>
+</html>
