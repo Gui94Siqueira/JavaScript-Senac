@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Nativas</title>
+    <script>
+        // propriedade length
+        document.write('Cristiano Maia'.length);
+        console.log('Guilherme Santos'.length);
+
+        // 
+        console.log('Cristiano Maia'.charAt(10));
+        console.log('Guilherme Santos'.charAt(5));
+
+        let nome = 'Cristiano Maia';
+        let quebra = '<br>'
+
+        document.write('<br>');
+        // propriedade indexOf
+        document.write(nome.indexOf('M'));
+
+        // propriedade replace
+        document.write(quebra + nome.replace('Maia','Silva'));
+
+        document.write(quebra + nome.substr(0,4));
+
+        // propriedade toUpperCase()
+        document.write(quebra + nome.toUpperCase());
+
+        // propriedade toLowercase()
+        document.write(quebra + nome.toLowerCase());
+
+        document.write(quebra);
+
+        let texto = ' Aula JavaScript ';
+
+        //propriedades trim
+        document.write('=' + texto + '=' + quebra);
+        document.write('=' + texto.trim() + '=' + quebra);
+
+        let numero = 10.35978;
+
+        document.write(numero + quebra);
+        // arredondamento para cima
+        document.write(Math.ceil(numero) + quebra);
+        // arredondamento para baixo
+        document.write(Math.floor(numero) + quebra);
+
+        // 
+        document.write(Math.round(10.5) + quebra);
+        document.write(Math.round(10.4) + quebra);
+
+        let x = Math.random();
+        document.write(quebra + x);
+
+    </script>
+    <link rel="stylesheet" href="../atividades/style.css">
+</head>
+<body>
+    
+</body>
+</html>

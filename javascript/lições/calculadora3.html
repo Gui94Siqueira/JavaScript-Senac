@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples 3</title>
+</head>
+<body>
+    <h1>Calculadora Simples 03</h1>
+
+    <!-- Campos de entrada -->
+    <input type="text" id="numero1" placeholder="Primeiro valor"><br>
+    <input type="text" id="numero2" placeholder="Segundo valor"><br><br>
+
+    <!-- Botões de operação -->
+    <button onclick="calcular('+')"> + </button>
+    <button onclick="calcular('-')"> - </button>
+    <button onclick="calcular('*')"> * </button>
+    <button onclick="calcular('/')"> / </button><br><br>
+
+    <input type="text" id="resultado" placeholder="Resultado">
+
+    <script>
+        function calcular(operacao) {
+            // obter os valores de n1 e n2 dos campos de texto
+            let num1 = parseFloat(document.getElementById("numero1").value);
+            let num2 = parseFloat(document.getElementById("numero2").value);
+
+            // Verificar se os valores são válidos (números)
+            if (parseFloat(num1) && parseFloat(num2)) {
+                let resultado;
+
+                // realizar operação com base na escolha
+            switch (operacao) {
+                case '+':
+                    resultado = num1 + num2;
+                    break;
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 !== 0) {
+                        resultado= num1 / num2;
+                    } else {
+                        resultado= 'Divisão por zero!';
+                    }
+                    break;
+                default:
+                    resultado = 'Operação inválida';
+            }
+
+                // Exibir o resultado na caixa de texto
+                document.getElementById("resultado").value = resultado;
+            } else {
+                document.getElementById("resultado").value = "Entrada inválida";
+        }
+    }
+    </script>
+</body>
+</html>

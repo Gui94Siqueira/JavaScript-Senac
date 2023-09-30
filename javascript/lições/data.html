@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função Data</title>
+    <script>
+        document.write('<br>');
+
+        // faz com que um objeto de data seja criado e atribuido a uma variavel
+        let data = new Date();
+        // retorna o dia da semana da data atual iniciando em 0
+        document.write('Dia da semana: ' + data.getDay() + '<br>');
+        // retorna o dia no mês da data atual
+        document.write('Dia no mês: ' + data.getDate() + '<br>');
+
+        // retorna com o mês numero iniciando por 0
+        document.write('Mês: ' + data.getMonth() + '<br>');
+        document.write('Mês: ' + (data.getMonth()+1) + '<br>');
+
+        // retona o ano completo
+        document.write('Ano: ' + data.getFullYear() + '<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 27</title>
+    <script>
+        let data = new Date();
+        let dia;
+        let mes;
+
+        if (data.getDay() == 0) {
+            dia = 'Domingo';
+        } if (data.getDay() == 1) {
+            dia = 'Segunda-feira';
+        } if (data.getDay() == 2) {
+            dia = 'Terça-feira';
+        } if (data.getDay() == 3) {
+            dia = 'Quata-feira';
+        } if (data.getDay() == 4) {
+            dia = 'Quinta-feira';
+        } if (data.getDay() == 5) {
+            dia = 'Sexta-feira';
+        } if (data.getDay() == 6) {
+            dia = 'sabado'
+        };
+
+        if (data.getMonth()+1 == 1) {
+            mes = 'Janeiro';
+        } if (data.getMonth()+1 == 2) {
+            mes = 'Fevereiro';
+        } if (data.getMonth()+1 == 3) {
+            mes = 'Março';
+        } if (data.getMonth()+1 == 4) {
+            mes = 'Abril';
+        } if (data.getMonth()+1 == 5) {
+            mes = 'Maio';
+        } if (data.getMonth()+1 == 6) {
+            mes = 'Junho';
+        } if (data.getMonth()+1 == 7) {
+            mes = 'Julho';
+        } if (data.getMonth()+1 == 8) {
+            mes = 'Agosto';
+        } if (data.getMonth()+1 == 9) {
+            mes = 'Setembro';
+        } if (data.getMonth()+1 == 10) {
+            mes = 'Outubro';
+        } if (data.getMonth()+1 == 11) {
+            mes = 'Novenbro';
+        } if (data.getMonth()+1 == 12) {
+            mes = 'Dezembro';
+        } 
+
+        document.write('<font color=blue>' + dia + ', ' + data.getDate() + ' ' + mes + ', ' + data.getFullYear() + '.</font>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

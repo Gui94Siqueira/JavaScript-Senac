@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 26</title>
+    <script>
+        let n1 = parseInt(prompt('Digite o primeiro numero: ',''));
+        let n2 = parseInt(prompt('Digite o segundo numero: ',''));
+
+        let operacao = prompt('Digite o numero correspondente a operação deseja realizar ?\n+) soma\n-) Subtração\n/) Divisão\n *)Multiplicação','');
+
+        let nome;
+        let conta;
+
+        function calculadora() {
+            switch(operacao) {
+            case '+':
+                conta = n1 + n2;
+                nome = 'soma';
+                break;
+            case '-':
+                conta = n1 - n2;
+                nome = 'subtração';
+                break;
+            case '/':
+                conta = n1 / n2;
+                nome = 'Divisão';
+                break;
+            case '*':
+                conta = n1 * n2;
+                nome = 'Multiplicação';
+                break;
+            default:
+                alert('Operação inválida\n recarregue a pagina e tente novamente')
+        }
+        }
+        calculadora();
+        document.write('Primeiro Valor: ' + n1);
+        document.write('<br>Segundo valor: ' + n2);
+        document.write('<br>Operação escolhida: ' + nome);
+        document.write('<br>Resultado: ' + '<font color=blue>' + conta + '</font>');
+
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>
