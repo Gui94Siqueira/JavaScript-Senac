@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade - 28</title>
-    <script>
-        let data = new Date();
-        let mes;
-        let dia;
-
-        if (data.getDate() < 10) {
-            dia = '0' + data.getDate();
-        }
-
-        if (data.getMonth() < 10) {
-            mes = '0' + (data.getMonth()+1);
-       }
-        document.write('<font color=blue><h1>' + data.getDate() + '/' + mes + '/' + data.getFullYear() + '</h1></font>');
-    </script>
+    <title>Document</title>
 </head>
 <body>
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 10px;
+
+        }
+        .item{
+            display: flex;
+            background-color: red;
+            color: red;
+            width: 150px;
+            height: 150px;
+            border: 1px solid red;
+            border-radius: 50%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+        }
+    </style>
+
+        <script>
+            function acao() {
+                
+            }
+        </script>
     
+    <main>
+        <div onclick="this.style.backgroundColor='white'" class="item">X</div>
+        <div onclick="this.style.backgroundColor='white'" class="item">X</div>
+        <div onclick="this.style.backgroundColor='white'" class="item">X</div>
+        <div onclick="this.style.backgroundColor='white'" class="item">X</div>
+        <div onclick="this.style.backgroundColor='white'" class="item">PREMIADO</div>
+    </main>
+
 </body>
+
 </html>

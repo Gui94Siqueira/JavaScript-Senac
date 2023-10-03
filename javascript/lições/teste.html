@@ -1,0 +1,36 @@
+<script>
+    function errado1() {
+        document.getElementById('sorteioBolinhas1').innerHTML = 'X'
+    }
+    function errado2() {
+        document.getElementById('sorteioBolinhas2').innerHTML = 'X'
+    }
+    function premiado() {
+        document.getElementById('sorteioBolinhas3').innerHTML = 'PREMIADO'
+    }
+    function errado3() {
+        document.getElementById('sorteioBolinhas4').innerHTML = 'X'
+    }
+    function errado4() {
+        document.getElementById('sorteioBolinhas5').innerHTML = 'X'
+    }
+
+</script>
+
+<div style="display: flex; justify-content: center; margin-top: 250px;">
+    <div onclick="errado1()" style="background-color: blue; width: 350px; height: 350px; border-radius: 50%;">
+        <p id="sorteioBolinhas1" style="text-align: center; margin-top: 145px; font-size: 50px;"></p>
+    </div>
+    <div onclick="errado2()" style="background-color: red; width: 350px; height: 350px; border-radius: 50%;">
+        <p id="sorteioBolinhas2" style="text-align: center; margin-top: 145px; font-size: 50px;"></p>
+    </div>
+    <div onclick="premiado()" style="background-color: green; width: 350px; height: 350px; border-radius: 50%;">
+        <p id="sorteioBolinhas3" style="text-align: center; margin-top: 145px; font-size: 50px;"></p>
+    </div>
+    <div onclick="errado3()" style="background-color: orange; width: 350px; height: 350px; border-radius: 50%;">
+        <p id="sorteioBolinhas4" style="text-align: center; margin-top: 145px; font-size: 50px;"></p>
+    </div>
+    <div onclick="errado4()" style="background-color: pink; width: 350px; height: 350px; border-radius: 50%;">
+        <p id="sorteioBolinhas5" style="text-align: center; margin-top: 145px; font-size: 50px;"></p>
+    </div>
+</div>

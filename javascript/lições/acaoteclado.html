@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Exemplo evento onkeydown</h2>
+
+    <h2>Exemplo evento onKeyown</h2>
+    <p>Pressione o Enter</p>
+
+    <div id="tecla"></div>
+
+    <script>
+
+        // quando pressionado qualquer tecla ativa a função
+        document.onkeydown = function() {
+            document.body.style.backgroundColor = 'yellow';
+
+        // Este script mostra uma mensagem quando você pressiona a tecla "Enter" no teclado
+
+        document.onkeydown = function(event) {
+            if (event.key === "Enter") {
+                alert('você pressionou o Enter!');
+            }
+        }
+
+        // este script conata quantas teclas você pressionou
+        var contador = 0;
+
+        document.onkeydown = function() {
+            contador++;
+            console.log("teclas pressionadas: " + contador);
+        }
+
+        document.onkeypress = function(event) {
+            console.log("você digitou a letra: " + event.key);
+        }
+    }
+
+
+    </script>
+</body>
+</html>

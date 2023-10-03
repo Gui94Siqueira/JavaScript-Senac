@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<div>
+    <img id="cristiano" src="img/MicrosoftTeams-image (3).png" alt="" width="150">
+    <br>
+    <input type="radio" id="teste" name="teste" onclick="lampadaOn()">Ligar <br>
+    <input type="radio" id="teste" name="teste" onclick="lampadaOff()">Desligar
+
+</div>
+
+<script>
+    function lampadaOn() {
+        document.getElementById("cristiano").src = "img/MicrosoftTeams-image (2).png";
+    }
+
+    function lampadaOff() {
+        document.getElementById("cristiano").src = "img/MicrosoftTeams-image (3).png";
+    }
+
+</script>
+
+</body>
+
+</html>
