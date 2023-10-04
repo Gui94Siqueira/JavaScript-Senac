@@ -5,7 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade - 12</title>
     <script>
-        
+        let surpresa =parseInt(prompt('Descubra onde esta a surpresa (Digite entre 1 e 7): ', ''));
+        let aqui;
+
+    switch (surpresa) {
+        case 1:
+            aqui = 'não esta aqui';
+            break;
+
+            case 2:
+            aqui = 'não esta aqui';
+            break;
+
+            case 3:
+            aqui = 'não esta aqui';
+            break;
+
+            case 4:
+            aqui = '<h1>Acertou parabens</h1>';
+            break;
+
+            case 5:
+            aqui = 'não esta aqui';
+            break;
+
+            case 6:
+            aqui = 'não esta aqui';
+            break;
+
+            case 7:
+            aqui = 'não esta aqui';
+            break;
+            // default sera o caso FALSE da equação
+            default:
+            aqui = 'Valor Inválido';
+    }
+
+    document.write('Número digitado: ' + surpresa);
+    document.write('<br> status: ' + aqui)
     </script>
 </head>
 <body>
