@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando itens na minha array</title>
+</head>
+<body>
+    <script>
+
+        let lista_frutas = Array();
+        lista_frutas[0] = 'Banana';
+        lista_frutas[1] = 'Maçã';
+
+        // incluir elementos no final da array
+        lista_frutas.push('Uva');
+
+        // inclui elemento no inicio da array
+        lista_frutas.unshift('morango');
+
+        // excluir elemento do final da Array
+        lista_frutas.pop();
+
+        //exclui elemento do inicio da Array
+        lista_frutas.shift();
+        
+        console.log(lista_frutas);
+    </script>
+</body>
+</html>
