@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratica Array</title>
+    <style>
+        body {
+            background-image: linear-gradient(to left bottom, rgba(14, 165, 14, 0.425), rgba(87, 9, 9, 0.603));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+
+        }
+
+        form {
+            width: 500;
+            height: 100%;
+            border-radius: 10px;
+            padding: 40px 20px;
+            box-shadow: 2px 5px 2px #00000077;
+            background-color: #fff;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #c5c3c3;
+            border-radius: 5px;
+        }
+
+        input[type=submit] {
+            margin-left: 5px;
+            background-color: rgb(7, 179, 7);
+            color: #fff;
+            font-size: large;
+        }
+
+        input[type=submit]:hover {
+            background-color: green;
+        }
+
+        
+
+        input[type=radio] {
+            width: 10px;
+            height: 10px;
+            margin-bottom: 20px;
+        } 
+
+        .inputs {
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function form() {
+        let nome = document.getElementById('usuario');
+        let email = document.getElementById('email');
+        let tel = document.getElementById('telefone');
+        let dataNascimento = document.getElementById('dataNascimento');
+        let sexo = document.getElementsByName('radioSexo');
+        let senha = document.getElementById('senha');
+        let senhaConfirm = document.getElementById('senhaConfirm');
+
+        let fomrList = Array(nome.value, email.value, tel.value, dataNascimento.value, sexo.value, senha.value, senhaConfirm.value);
+
+        return document.write(fomrList);
+
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Enunciado: Elabore um programa utilizando 
+    os recursos de Array que você aprendeu na aula -->
+
+    <section>
+
+        <form name="cadastro" action="form()" method="post">
+            <h1>Cadastre-se</h1>
+            <div class="inputs">
+                <label for="name">Nome: </label>
+                <input type="text" id="usuario" placeholder="Digite o seu nome completo" required>
+            </div>
+            <div class="inputs">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite o seu email" required>
+            </div>
+            <div class="inputs">
+                <label for="telefone">tel: </label>
+                <input type="tel" id="telefone" name="telefone" placeholder="digite o seu telefone" required>
+            </div>
+            <div class="inputs">
+                <label for="dataNascimento">Data de nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento">
+            </div>
+            <div class="input_radio">
+                <p>Sexo: </p>
+                <input type="radio" id="sexoM" name="radioSexo" value="masculino">
+                <label for="sexoM">Masculino</label>
+
+                <input type="radio" id="sexoF" name="radioSexo" value="feminino">
+                <label for="sexoF">Feminino</label>
+
+                <input type="radio" id="sexoO" name="radioSexo" value="outro">
+                <label for="sexoO">Outros</label>
+            </div>
+            <div class="inputs">
+                <label for="senha">Digite uma Senha: </label>
+                <input type="password" id="senha" name="senha" required placeholder="Digite uma senha">
+            </div>
+            <div class="inputs">
+                <label for="senha">Confirme sua Senha: </label>
+                <input type="password" id="senhaConfirm" name="senha" required placeholder="Digite uma senha">
+            </div>
+            <div class="inputs">
+                <input type="submit" value="enviar" onclick="">
+            </div>
+        </form>
+    </section>
+
+</body>
+
+</html>

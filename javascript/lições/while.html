@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Estruturas de repetição</h1>
+
+    <script>
+        x = 1; // nesse momento a variavel x recebe o valor 1
+
+        // enquanto for verdadeiro 'true' que a variavel é menor ou igual a 10
+        while (x <= 10) {
+            document.write(x + '<br>'); // irá imprimir na tela o valor de x com quebra de linha
+
+            // aqui incrementamos a variavel x seu valor se tornar verdadeiro na condição
+            x++;
+        }
+
+        let pergunta = prompt('Tomate é fruta ou legume: ','');
+        let tomate = 'fruta';
+
+        while (pergunta != tomate) {
+            alert('Você esta errado, tente de novo');
+            pergunta = prompt('tomate é fruta ou legume');
+        }
+
+        document.write('ufa ja era hora');
+    </script>
+</body>
+</html>
