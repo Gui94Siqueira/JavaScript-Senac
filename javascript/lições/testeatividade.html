@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - 39</title>
+    <style>
+        body {
+            background-color: #efefef;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        h3 {
+            color: blue;
+        }
+
+        .container {
+            background-color: #fff;
+            border: #efefef solid;
+            border-radius: 10px;
+            padding: 20px 40px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            border: 1px solid #efefef;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .container input[type="submit"] {
+            background-color: blue;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: medium;
+            border: none;
+        }
+
+        .container input[type="reset"] {
+            background-color: blue;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: medium;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Galeria de Imagens Interativa com Upload</h1>
+
+    <h3>Desenvolvedores: Diogo / Guilherme</h3>
+
+    <div class="container">
+        <label for="file">Upload de imagem: </label>
+        <input type="file" id="imagem">
+
+        <div>
+            <label for="quantidade">Quantidade de imagens:</label>
+            <input type="number" value="0" required id="numero">
+        </div>
+
+        <input type="submit" placeholder="Adicionar" onclick="enviar()">
+        <input type="reset" placeholder="Resetar">
+
+    </div>
+    <img src="" alt="" id="img">
+
+
+    <script>
+        function enviar() {
+            let img = document.getElementById('imagem');
+            let imprimir = document.createElement('img');
+
+            if (img.files && img.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imprimir.src = e.target.result;
+                    document.body.appendChild(imprimir);
+                }
+                }
+                reader.readAsDataURL(img.files[0]);
+            }
+            
+         
+
+    </script>
+</body>
+
+</html>
