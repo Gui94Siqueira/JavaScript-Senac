@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação Formulario</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #242933;
+    display: flex;
+    font-family: Poppins;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    border: 0;
+}
+
+.container {
+    background-color: #2F3644;
+    border-radius: 5px;
+    border: 2px solid #3E445B;
+    width: 450px;
+    max-width: 100%;
+}
+
+.header {
+    padding: 30px 40px;
+}
+
+.header h2 {
+    font-weight: 600;
+    color: #ACBAE1;
+    font-size: 30px;
+}
+
+.form {
+    padding: 0 40px 30px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #828CAD;
+}
+
+.form-control input {
+    border: 2px solid #3E445B;
+    border-radius: 5px;
+    outline: 0;
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    padding: 15px;
+}
+
+
+.form button {
+    background-color: #6C63FF;
+    border-radius: 5px;
+    color: #fff;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #584ff5;
+    transition: 0.3s;
+}
+
+.erro {
+    display: none;
+    color: red;
+    font-size: 14px;
+}
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('form'); 
+        const nomeUsuarioInput = document.getElementById('nomeusuario');
+        const nomeEmailInput = document.getElementById('nomeEmail');
+        const erroElement = document.getElementById('erroNome');
+        const erroEmailElement = document.getElementById('erroEmail');
+
+    form.addEventListener('submit', function(event) {
+        if (nomeUsuarioInput.value.trim() === '') {
+            event.preventDefault(); // impede o envio do formulário
+
+            // Exibe a mensgem de erro
+            erroElement.style.display = 'block';
+        }
+        else {
+            // Se o campo não estiver vazio, oculta a mensagem de erro
+            erroElement.style.display = 'none';
+        };
+
+        if (nomeEmailInput.value.trim() === '') {
+            event.preventDefault();
+            erroEmailElement.style.display = 'block';
+        }
+        else {
+            erroEmailElement.style.display = 'none';
+        };
+
+        // validar o campo de e-mail com uma expressão regular ou u e-mail valido
+        const emaliRegex = /^[A-Za-z0-9._%]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+        if (!emaliRegex.test(nomeEmailInput.value.trim())) {
+            event.preventDefault();
+            erroEmailElement.style.display = 'block';
+        }
+        else {
+            erroEmailElement.style.display = 'none';
+        };
+    });
+});
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Criar Conta</h2>
+        </div>
+
+        <form action="#" id="form" class="form">
+
+            <!-- campo nome- -->
+            <div class="form-control">
+                <label for="nomeusuario">Nome:</label>
+                <input type="text" id="nomeusuario">
+                <!-- div criada para exibir mensagens de erro -->
+                <div id="erroNome" class="erro">Por favor, preencha o campo Nome.</div>
+            </div>
+
+            <!-- campo e-mail -->
+            <div class="form-control">
+                <label for="nomeEmail">E-mail:</label>
+                <input type="text" id="nomeEmail">
+                <!-- div criada para exibir mensagens de erro -->
+                <div id="erroEmail" class="erro">Por favor, preencha o campo de E-mail.</div>
+            </div>
+
+           
+            <button type="submit">ENVIAR</button>
+
+        </form>
+    </div>
+
+</body>
+
+
+</html>
