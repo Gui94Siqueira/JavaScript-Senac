@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de cep</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function consultarCEP() {
+            var cep = document.getElementById('cep').value;
+
+            // verifica se o CEP possui apenas números - regex
+            if (!cep.match(/^[-0-9]+$/)) {
+                alert('O cep deve conter apenas números');
+                return;
+            }
+
+            // consulta o CEP no ViaCEP
+            $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function(data) {
+                if (!data.erro) {
+                    document.getElementById('logradouro').innerHTML = data.logradouro;
+                    document.getElementById('bairro').innerHTML = data.bairro;
+                    document.getElementById('cidade').innerHTML = data.localidade;
+                    document.getElementById('estado').innerHTML = data.uf;
+                }
+                else {
+                    alert('CEP não encontrado');
+                }
+            });
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to bottom, #000000, red);
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        form {
+            border: 1px solid #000;
+            padding: 50px 40px;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 2px 2px 10px #000;
+            height: 500px;
+        }
+
+        h1 {
+            width: 93%;
+            background-image: url(img/fundoficção.jpg);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        input {
+            width: 93%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #afafaf;
+            font-size: medium;
+            text-align: center;
+        }
+       label {
+        font-weight: 700;
+       }
+        
+    </style>
+</head>
+<body>
+    <form action="#">
+        <h1>Consulta Endereço por CEP</h1>
+        <div>
+            <!-- onblur saindo do campo  -->
+            <label for="cep">CEP: </label>
+            <input type="text" id="cep" placeholder="Digite o CEP desejado" name="cep" maxlength="9" onblur="consultarCEP()" required>
+        </div>
+        <div>
+            <h3>Lougradouro: </h3>
+            <p id="logradouro"></p>
+        </div>
+        <div>
+            <h3>Bairro: </h3>
+            <p id="bairro"></p>
+        </div>
+        <div>
+            <h3>Cidade: </h3>
+            <p id="cidade"></p>
+        </div>
+        <div>
+            <h3>Estado: </h3>
+            <p id="estado"></p>
+        </div>
+    </form>
+    
+</body>
+<script>
+    $(document).ready(function () {
+            var $campo = $("#cep");
+            $campo.mask('00000-000', {reverse: true});
+    }); 
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+
+</html>
