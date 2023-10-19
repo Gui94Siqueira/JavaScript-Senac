@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Adicione estilos CSS aqui para estilizar o formulário */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Cadastro de Clientes</h2>
+        <form id="cadastro-form">
+
+            <label for="nomeRazaoSocial">Nome/Razão Social<span>*</span></label>
+            <input type="text" id="nomeRazaoSocial" required>
+            <label for="cpfCnpj">CPF/CNPJ<span>*</span></label>
+            <input type="text" id="cpfCnpj" required>
+            <label for="cep">CEP</label>
+            <input type="text" id="cep">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro">
+            <label for="numero">Número</label>
+            <input type="text" id="numero">
+            <label for="complemento">Complemento</label>
+            <input type="text" id="complemento">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade">
+            <label for="estado">Estado</label>
+            <input type="text" id="estado">
+            <label for="telefoneFixo">Telefone Fixo (99)9999-9999</label>
+            <input type="text" id="telefoneFixo">
+            <label for="celular">Celular (99) 99999-9999</label>
+            <input type="text" id="celular">
+            <label for="data">Data de Aniversário/Inauguração (99/99/9999)</label>
+            <input type="text" id="data">
+            <label for="email">Enviar email (sim/não)</label>
+            <select id="email">
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
+            </select>
+            <label for="renda">Renda/Faturamento</label>
+            <input type="text" id="renda">
+            <label for="observacoes">Observações</label>
+            <textarea id="observacoes"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+const cpfCnpjInput = document.getElementById('cpfCnpj');
+const telefoneFixoInput = document.getElementById('telefoneFixo');
+const celularInput = document.getElementById('celular');
+const dataInput = document.getElementById('data');
+
+// Aplicar máscaras e formatação automática aos campos
+
+cpfCnpjInput.addEventListener('input', function () {
+    let value = cpfCnpjInput.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    if (value.length <= 11) {
+        // Máscara para CPF (formato: 999.999.999-99)
+        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+    } else {
+        // Máscara para CNPJ (formato: 99.999.999/9999-99)
+        value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+    }
+    cpfCnpjInput.value = value;
+});
+
+
+telefoneFixoInput.addEventListener('input', function () {
+    let value = telefoneFixoInput.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3'); // Máscara para telefone fixo
+    telefoneFixoInput.value = value;
+});
+
+
+
+celularInput.addEventListener('input', function () {
+    let value = celularInput.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3'); // Máscara para celular
+    celularInput.value = value;
+});
+
+dataInput.addEventListener('input', function () {
+    let value = dataInput.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    value = value.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3'); // Máscara para data
+    dataInput.value = value;
+});
+
+// Integração com a API ViaCep para preencher campos de endereço automaticamente
+const cepInput = document.getElementById('cep');
+
+cepInput.addEventListener('input', function () {
+    const cep = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+    if (cep.length === 8) {
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('logradouro').value = data.logradouro;
+                document.getElementById('complemento').value = data.complemento;
+                document.getElementById('cidade').value = data.localidade;
+                document.getElementById('estado').value = data.uf;
+            })
+            .catch(error => {
+                console.error('Erro ao buscar o CEP: ' + error);
+            });
+    }
+});
+
+// Lógica para validar o formulário e enviar os dados
+const form = document.getElementById('clienteForm');
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Impede o envio padrão do formulário
+
+    // Validação dos campos obrigatórios
+    const nomeRazaoSocial = document.getElementById('nomeRazaoSocial').value;
+    const cpfCnpj = cpfCnpjInput.value;
+    const telefoneFixo = telefoneFixoInput.value;
+    const celular = celularInput.value;
+
+    if (!nomeRazaoSocial || !cpfCnpj || !telefoneFixo || !celular) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+    }
+
+    // Aqui você pode adicionar mais validações de acordo com suas necessidades
+    // Por exemplo, validar o formato do CPF/CNPJ, telefone, etc.
+    // Se todas as validações passarem, você pode enviar os dados para o servidor
+    const formData = new FormData(form);
+
+    // Exemplo: envio dos dados para o servidor usando fetch
+    fetch('sua_url_de_envio', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            // Dados enviados com sucesso
+            alert('Dados enviados com sucesso!');
+            form.reset(); // Limpa o formulário
+        } else {
+            alert('Erro ao enviar os dados. Por favor, tente novamente.');
+        }
+    })
+    .catch(error => {
+        alert('Erro ao enviar os dados. Por favor, tente novamente.');
+    });
+});
+});
+    </script>
+</body>
+
+</html>
