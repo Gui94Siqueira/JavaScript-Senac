@@ -5,13 +5,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade mask</title>
+    <style>
+        body {
+            background-image: url(../assets/7RMn.gif);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: antiquewhite;
+            font-family: sans-serif;
+        }
+
+        form {
+
+            backdrop-filter: blur(20px);
+            width: 500px;
+            padding: 40px;
+            padding-right: 40px;
+            border-radius: 20px;
+        }
+
+        form h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        form h3 {
+            color: #fff;
+        }
+
+        .inputs1 input {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+            font-size: medium;
+            border-radius: 5px;
+            border: 1px solid #d8d5d5;
+        }
+
+        .select {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .select label {
+            margin-top: 8px;
+        }
+
+        .select select {
+            width: 150px;
+            padding: 10px;
+            border: 1px solid #d8d5d5;
+            border-radius: 10px;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        .select option {
+            background-color: black;
+            color: #fff;
+        }
+
+        .inputCpf input {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .containerEnd {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .containerEnd label {
+            color: #fff;
+        }
+
+        .endereco {
+            color: #fff;
+            width: 44%;
+            
+        }
+
+        .endereco2 {
+            width: 50%;
+            
+        }
+
+        .endereco input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        
+
+        .endereco2 input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .nascimento {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            color: #fff;
+        }
+
+        input {
+            background-color: #00000075;
+            color: #d6d0d0;
+            padding: 10px;
+            font-size: medium;
+            border-radius: 5px;
+            border: 1px solid #d8d5d5;
+        }
+
+        .areaTexto {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .areaTexto textarea {
+            background-color: #00000075;
+            width: 103%;
+            border: 1px solid #d8d5d5;
+            border-radius: 10px;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     <script type="text/javascript">
-         function consultarCEP() {
+        function consultarCEP() {
             var cep = document.getElementById('cep').value;
 
             // verifica se o CEP possui apenas números - regex
@@ -21,7 +162,7 @@
             }
 
             // consulta o CEP no ViaCEP
-            $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function(data) {
+            $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function (data) {
                 if (!data.erro) {
                     document.getElementById('logradouro').value = data.logradouro;
                     document.getElementById('cidade').value = data.localidade;
@@ -33,80 +174,96 @@
             });
         }
 
-        // mascara de CPF/CNPJ
+        $(document).ready(function () {
+            var $campo = $("#cep");
+            $campo.mask('00000-000', { reverse: true });
 
-        var options = {
-            onKeyPress: function (cpf, ev, el, op) {
-                var masks = ['000.000.000-000', '00.000.000/0000-00'];
-                var tel = '(00) 00000-0000';
-                
-                $('.cpfOuCnpj').mask((cpf.length > 14) ? masks[1] : masks[0], op);
-            }
+            var $tel = $('.tel');
+            $tel.mask('(00) 0000-0000', { reverse: true });
 
-        }
-        $('.telFixo').mask(tel);
-        $('.cpfOuCnpj').length > 11 ? $('.cpfOuCnpj').mask('00.000.000/0000-00', options) : $('.cpfOuCnpj').mask('000.000.000-00#', options);
+            var $telCel = $('.telCel');
+            $telCel.mask('(00) 00000-0000', { reverse: true });
+        });
+
 
     </script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 
     <form action="#">
         <h2>Cadastro de Cliente</h2>
-        
-        <div>
+
+        <div class="inputs1">
             <label for="nome">Nome: </label>
             <input type="text" placeholder="Digite o seu nome completo" id="nome" class="nome">
         </div>
-       
 
-        <div>
+
+        <div class="inputs1">
             <label for="estadoCivil">Razão Social: </label>
             <input type="text" placeholder="Estado Civil" id="estadoCivil" class="estadoCivil">
         </div>
 
-        <div>
+        <div class="inputCpf">
             <label for="nome">CPF/CNPJ: </label>
-            <input type="text" id="cpfOuCnpj" class="cpfOuCnpj" value="000.000.000-00">
+            <input type="text" id="cpfOuCnpj" class="cpfOuCnpj" placeholder="000.000.000-00">
         </div>
-
-        <div>
-            <label for="Endereço">Endereço: </label>
-            <input type="text" id="cep" class="cep" onblur="consultarCEP()">
-            <input type="text" placeholder="Logradouro" id="logradouro">
-            <input type="text" placeholder="Cidade" id="cidade">
-            <input type="text" placeholder="Estado" id="estado">
-            <input type="number" placeholder="Numero" id="numero">
-            <input type="text" placeholder="Complemento" id="complemento">
+        <h3>Endereço:</h3>
+        <div class="containerEnd">
+            <div class="endereco">
+                <input type="text" placeholder="CEP" id="cep" class="cep" onblur="consultarCEP()">
+                <input type="text" placeholder="Logradouro" id="logradouro">
+                <input type="text" placeholder="Cidade" id="cidade">
+            </div>
+            <div class="endereco2">
+                <input type="text" placeholder="Estado" id="estado">
+                <input type="text" placeholder="Numero" id="numero">
+                <input type="text" placeholder="Complemento" id="complemento">
+            </div>
         </div>
-        <div>
+        <div class="inputs1">
+            <br>
             <label for="telFixo">Telefone Fixo:</label>
-            <input type="tel" class="telFixo" placeholder="Telefone Fixo" value="1111111111111">
+            <input type="tel" class="tel" placeholder="Telefone Fixo">
         </div>
-        <div>
+        <div class="inputs1">
             <label for="tel">Telefone:</label>
-            <input type="tel" class="tel" placeholder="Telefone">
+            <input type="tel" class="telCel" placeholder="Telefone">
         </div>
-        <div>
+        <div class="nascimento">
             <label for="nasc">Data de Nascimento:</label>
             <input type="date" class="nasc">
         </div>
-        <div>
+        <div class="inputs1">
             <label for="email">E-mail</label>
             <input type="email" class="email" placeholder="Digite o seu E-mail">
+        </div>
+        <div class="select">
+            <label for="">Deseja receber E-mail? </label>
             <select name="enviarEmail" id="email">
                 <option value="sim">Sim</option>
                 <option value="nao">Não</option>
             </select>
-
         </div>
-        <div>
-            <label for="renda">Renda/Faturamento</label>
+        <div class="inputs1">
+            <label for="renda">Renda/Faturamento: </label>
             <input type="number" maxlength="6" class="rentaFaturamento" placeholder="Informe a sua renda">
         </div>
-        <div>
-            <label for="obs">Observações</label>
-            <textarea name="obs" id="obs" cols="30" rows="10"></textarea>
+        <div class="areaTexto">
+            <label for="obs">Observações: </label>
+            <textarea name="obs" id="obs" cols="30" rows="10" placeholder="Insira a sua mensagem"></textarea>
         </div>
     </form>
 </body>
+<script>
+    var options = {
+            onKeyPress: function (cpf, ev, el, op) {
+                var masks = ['000.000.000-000', '00.000.000/0000-00'];
+                $('.cpfOuCnpj').mask((cpf.length > 14) ? masks[1] : masks[0], op);
+            }
 
+        }
+        $('.cpfOuCnpj').length > 11 ? $('.cpfOuCnpj').mask('00.000.000/0000-00', options) : $('.cpfOuCnpj').mask('000.000.000-00#', options);
+
+</script>
 </html>
