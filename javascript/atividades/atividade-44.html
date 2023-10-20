@@ -174,18 +174,7 @@
             });
         }
 
-        $(document).ready(function () {
-            var $campo = $("#cep");
-            $campo.mask('00000-000', { reverse: true });
-
-            var $tel = $('.tel');
-            $tel.mask('(00) 0000-0000', { reverse: true });
-
-            var $telCel = $('.telCel');
-            $telCel.mask('(00) 00000-0000', { reverse: true });
-        });
-
-
+        
     </script>
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
@@ -266,5 +255,18 @@
         }
         $('.cpfOuCnpj').length > 11 ? $('.cpfOuCnpj').mask('00.000.000/0000-00', options) : $('.cpfOuCnpj').mask('000.000.000-00#', options);
 
+        $(document).ready(function () {
+            var $campo = $("#cep");
+            $campo.mask('00000-000', { reverse: true });
+
+            var $tel = $('.tel');
+            $tel.mask('(00) 0000-0000', { reverse: true });
+            $('.tel').mask('(00) 0000-0000');
+
+            var $telCel = $('.telCel');
+            $telCel.mask('(00) 00000-0000', { reverse: true });
+            $('.telCel').mask('(00) 00000-0000');
+        });
 </script>
+
 </html>
