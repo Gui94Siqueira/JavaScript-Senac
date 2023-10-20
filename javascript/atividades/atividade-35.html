@@ -5,36 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>atividade - 35</title>
-    <script>
-        function newtarefa() {
-            let tarefa = Array()
-            tarefa = document.getElementById('tarefa').value;
-            
-            if (tarefa == '') {
-                alert('Insira uma tarefa');
-            return;
-            } else {
-                
-                let resultado = document.getElementById('resultado').innerHTML += '<br>' + tarefa;
-        }
-            
-
-
-
-        }
-    </script>
 </head>
 
 <body>
     <h1>Lista de Tarefas</h1>
     <form action="#">
         <label for="tarefa">Nome da tarefa:</label>
-        <input type="text" id="tarefa" name="tarefa" placeholder="Insira uma tarefa">
-        <input type="submit" onclick="newtarefa()">
-    </form>
-    <div>
         <p id="resultado"></p>
-    </div>
+        <input type="submit" onclick="excluir()" value="excluir">
+    </form>
+    <script>
+
+        let trimestre1 = ["Jan", "Fev", "Mar"];
+        let trimestre2 = ["Abr", "Mai", "Jun"];
+        let trimestre3 = ["Jul", "Aug", "Set"];
+        let trimestre4 = ["Out", "Nov", "dez"];
+
+        const ano = [...trimestre1, ...trimestre2, ...trimestre3, ...trimestre4];
+
+        function excluir() {
+            ano.pop()
+            document.getElementById("resultado").innerHTML = ano; 
+        }
+
+        document.getElementById("resultado").innerHTML = ano; 
+
+    </script>
+    
 </body>
 
 </html>
