@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#flip").click(function () {
+        $("#painel").slideDown("slow");
+        });
+      });
+      $(document).ready(function () {
+        $("#flip1").click(function () {
+        $("#painel1").slideToggle("slow");
+        });
+      });
+      $(document).ready(function () {
+        $("#flip2").click(function () {
+        $("#painel2").slideToggle("slow");
+        });
+      });
+    </script>
+    <style>
+        body{
+            font-family: Arial;
+            background-color:#c3c3bf ;
+        }
+      #painel,
+      #flip {
+        padding: 5px;
+        text-align: center;
+        background-color: #8e09b3;
+        border: double 2px black;
+        border-radius: 15px;
+        color: white;
+      }
+      #painel {
+        padding: 50px;
+        display: none;
+      }
+      #painel1,
+      #flip1 {
+        padding: 5px;
+        text-align: center;
+        background-color: #d215af;
+        border: double 2px black;
+        border-radius: 15px;
+        color: white;
+      }
+      #painel1 {
+        padding: 50px;
+        display: none;
+    }
+    #painel2,
+    #flip2 {
+        padding: 5px;
+        text-align: center;
+        background-color: #31b1ec;
+        border: double 2px black;
+        border-radius: 15px;
+        color: white;
+      }
+      #painel2 {
+        padding: 50px;
+        display: none;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="flip">Clique Aqui Turma:</div>
+    <div id="painel">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsa aperiam
+      omnis, officia repellendus incidunt laborum, atque ad suscipit, fugiat
+      fuga distinctio magnam quis laboriosam necessitatibus veniam. Facilis,
+      eveniet rem.
+    </div>
+    <div id="flip1">Clique Aqui Turma:</div>
+    <div id="painel1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsa aperiam
+      omnis, officia repellendus incidunt laborum, atque ad suscipit, fugiat
+      fuga distinctio magnam quis laboriosam necessitatibus veniam. Facilis,
+      eveniet rem.
+    </div>
+    <div id="flip2">Clique Aqui Turma:</div>
+    <div id="painel2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsa aperiam
+      omnis, officia repellendus incidunt laborum, atque ad suscipit, fugiat
+      fuga distinctio magnam quis laboriosam necessitatibus veniam. Facilis,
+      eveniet rem.
+    </div>
+  </body>
+</html>

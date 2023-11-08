@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#flip').click(function () { // quando clicar em qualquer tag <p>
+                $('#painel').slideDown('slow'); // Hide = imvisivel
+            });
+        });
+    </script>
+    <style>
+        #painel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: 1px solid #c3c3c3;
+        }
+        #painel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="flip">click aqui sala 18!</div>
+    <div id="painel">Iisso é um exemplo do que o jquery pode fazer por você! <br>
+    Você pode ter varios paineis como esse</div>
+</body>
+
+</html>
